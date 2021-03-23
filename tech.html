@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDusihqF_Be56XzwFssSj7YoAaTlt0TEbY",
+            authDomain: "tech-58735.firebaseapp.com",
+            projectId: "tech-58735",
+            storageBucket: "tech-58735.appspot.com",
+            messagingSenderId: "953580100418",
+            appId: "1:953580100418:web:aede1b9f097eb6a8d2c6db",
+            measurementId: "G-KP6D6JESQW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h2>Grade Collection</h2>
+    <input type="text" id="name">
+    <input type="text"  onkeyup="addInput()" id="loop">
+    <div id="showAdd"></div>
+
+    <input type="submit" onclick="submit()" value="submit">
+
+    <div id="showGrade">
+        
+    </div>
+
+    <script>
+        function addInput() {
+            let round = parseInt(loop.value);
+            console.log(round);
+            showAdd.innerHTML = ""
+            for(let i=0; i<round; i++){
+                showAdd.innerHTML += `<h4>subject ${i+1} </h4>`
+                showAdd.innerHTML += "<div class='show'>"
+                showAdd.innerHTML += `<input type='text' id='subj${i}' placeholder='subject'>`
+                showAdd.innerHTML += `<input type='text' id='unnit${i}' placeholder='unit'>`
+                showAdd.innerHTML += `<input type='text' id='grade${i}' placeholder='grade'>`
+                showAdd.innerHTML += "</div>"
+            }
+        }
+
+        function submit() {
+            let round = parseInt(loop.value);
+            for(let i=0; i)
+            console.log()
+        }
+    </script>
+</body>
+
+</html>
